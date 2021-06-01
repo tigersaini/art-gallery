@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>art Gallery</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: cursive;
+    }
+    
+    label.logo {
+        color: #fff;
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 40px;
+        font-weight: bold;
+        font-family: cursive;
+    }
+    
+    .menubar {
+        background: black;
+        height: 100px;
+        width: 100%;
+    }
+    
+    .menubar ul {
+        display: inline-flex;
+        list-style: none;
+        color: black;
+        float: right;
+    }
+    
+    .menubar ul li {
+        margin: 15px;
+        padding: 15px;
+        margin-right: 40px;
+    }
+    
+    .menubar ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 15px;
+    }
+    
+    .menubar ul li a:hover {
+        background: none;
+        color: aqua;
+    }
+    
+    .checkbtn {
+        font-size: 17px;
+        color: white;
+        float: right;
+        line-height: 50px;
+        margin-right: 20px;
+        cursor: pointer;
+        display: none;
+    }
+    
+    #check {
+        display: none;
+    }
+    
+    @media(max-width:360px) {
+        .checkbtn {
+            display: block;
+        }
+        .menubar ul {
+            position: fixed;
+            width: 100%;
+            height: 400px;
+            background: black;
+            top: 55px;
+            left: 100%;
+            text-align: center;
+            transition: all .5s;
+        }
+        .menubar ul li {
+            display: block;
+            margin: 4px;
+        }
+        .menubar ul li a:hover {
+            background: none;
+            color: aqua;
+        }
+        #check:checked~ul {
+            left: 0;
+        }
+    }
+    
+    .search input {
+        width: 1078px;
+        height: 35px;
+        background: rgb(196, 195, 195);
+        border-radius: 3px;
+        border: none;
+        margin-top: 4px;
+    }
+    
+    .search button {
+        height: 34px;
+        width: 226px;
+        background: black;
+        color: white;
+        border-radius: 3px;
+        border: none;
+    }
+    
+    .slider {
+        width: 100%;
+        height: 550px;
+        background: url(guru.jpg);
+        margin: 5px auto;
+        animation: slide 15s infinite;
+    }
+    
+    @keyframes slide {
+        35% {
+            background: url(hh.jpg);
+        }
+        50% {
+            background: url(s\ -\ Copy.jpg);
+            background-size: cover;
+        }
+        75% {
+            background: url(yale_art_gallery_04.jpg);
+            background-size: cover;
+        }
+        100% {
+            background: url(Archer-Art-Gallery.jpg);
+            background-size: cover;
+        }
+    }
+    
+    .page {
+        text-align: center;
+    }
+    
+    .yash {
+        width: 400px;
+        height: 350px;
+    }
+    
+    .yash1 {
+        width: 400px;
+        height: 350px;
+    }
+    
+    .yash2 {
+        width: 400px;
+        height: 350px;
+    }
+    
+    .yash3 {
+        width: 400px;
+        height: 350px;
+    }
+    
+    .yash4 {
+        width: 400px;
+        height: 350px;
+    }
+    
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        width: 100%;
+        height: 180px;
+        margin-top: 4%;
+        font-family: cursive;
+    }
+    
+    .container h2 {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .row {
+        margin-top: 30px;
+    }
+    
+    .product-top img {
+        width: 100%;
+        height: 180px;
+        border-radius: 10px;
+    }
+    
+    .manshu h3 {
+        text-align: center;
+        align-items: center;
+    }
+    
+    .arrival {
+        margin-top: 200px;
+    }
+    
+    .parent5 {
+        border: 1px #fff;
+        width: 100%;
+        float: left;
+        margin-top: 30px;
+    }
+    
+    .leftdiv5 {
+        width: 125px;
+        height: 150px;
+        background: #c0c0c0;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: 250px;
+    }
+    
+    .rightdiv5 {
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.781);
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .star {
+        color: rgba(138, 130, 130, 0.678)
+    }
+    
+    .saleart {
+        text-align: center;
+    }
+    
+    * {
+        margin: 0;
+        padding: o;
+        box-sizing: border-box;
+    }
+    
+    footer {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.945);
+        margin-top: 100px;
+        height: auto;
+        width: 100%;
+        font-family: "cursive";
+        padding-top: 40px;
+        color: #fff;
+    }
+    
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+    
+    .footer-content h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+    }
+    
+    .footer-content button {
+        background: white;
+        color: black;
+        border: none;
+        height: 22px;
+        width: 60px;
+    }
+    
+    .footer-content p {
+        max-width: 500px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+    }
+    
+    .media {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 3rem 0;
+    }
+    
+    .media li {
+        margin: 0 10px;
+    }
+    
+    .media a {
+        text-decoration: none;
+        color: #FFF;
+    }
+    
+    .media a i {
+        font-size: 1.8rem;
+        transition: color .4s ease;
+    }
+    
+    .media a:hover i {
+        color: aqua;
+    }
+    
+    .footer-bottom {
+        background: rgb(0, 0, 0);
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+    .footer-bottom p {
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+        opacity: .4;
+        font-weight: 200;
+        color: azure;
+    }
+    
+    .button {
+        background: rgba(0, 0, 0, 0.144);
+        font-family: "sans-serif";
+        border-radius: 3px;
+        border: none;
+        width: 90px;
+        height: 30px;
+    }
+    
+    .contact {
+        color: white;
+    }
+    
+    @media(max-width:360px) {
+        .menubar {
+            background: black;
+            height: 50px;
+            width: 100%;
+        }
+        label.logo {
+            color: #fff;
+            font-size: 23px;
+            line-height: 45px;
+            padding: 0 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .search input {
+            width: 250px;
+            height: 20px;
+            background: rgb(196, 195, 195);
+            border-radius: 3px;
+            border: none;
+        }
+        .search button {
+            width: 40px;
+            height: 20px;
+            background: black;
+            color: white;
+            border-radius: 3px;
+            border: none;
+        }
+        .slider {
+            width: 100%;
+            height: 170px;
+            background: url(guru.jpg);
+            margin: 5px auto;
+            animation: slide 20s infinite;
+        }
+        .yash {
+            width: 230px;
+            height: 200px;
+        }
+        .yash1 {
+            width: 230px;
+            height: 200px;
+        }
+        .yash2 {
+            width: 230px;
+            height: 220px;
+        }
+        .yash3 {
+            width: 230px;
+            height: 200px;
+        }
+        .yash4 {
+            width: 230px;
+            height: 200px;
+        }
+        .arrival {
+            margin-top: 1000px;
+        }
+        .parent5 {
+            border: 1px #fff;
+            width: 100%;
+            float: left;
+            margin-top: 30px;
+        }
+        .leftdiv5 {
+            width: 125px;
+            height: 150px;
+            background: #c0c0c0;
+            float: left;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-left: 5px;
+        }
+        .rightdiv5 {
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.781);
+            float: left;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+</style>
+
+
+<body>
+    <div class="menubar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+        <label class="logo">The Art Gallery</label>
+
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="buy our art.html"> Buy your Art</a></li>
+            <li><a href="online form.html">Sell your Art</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </div>
+
+    <div class="search">
+        <form action="">
+            <input type="text" placeholder="Search Item...">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+
+
+    <div class="slider">
+    </div>
+    </div>
+
+    <div class="page">
+        <h2>5 FACTS ABOUT ART</h2>
+        <hr>
+
+        <div class="fact1">
+            <h3>
+                1. Art used to be an Olympic event
+            </h3>
+            <p>The Olympics wasn’t always about abs and doping scandals. The founder of the modern Games, the Baron Pierre de Coubertin, was enamoured with the idea of the true Olympian being a talented artist and sportsperson. Thanks to him, between 1912
+                and 1948 medals were given out for sporting-inspired masterpieces of architecture, music, painting, sculpture and literature.
+            </p><br>
+            <img src="fact1.jpg" class="yash" alt="" data-aos="zoom-in" data-aos duration="1000" data-aos-easing="ease-in-sine" data-aos-offset="300">
+        </div><br><br>
+        <div class="fact2">
+            <h3>2. The Mona Lisa has her own mailbox in the Louvre because of all the love letters she receives</h3><br>
+            <p>Over the years many have fallen prey to the portrait’s ‘limpid and burning eyes’, leaving her offerings of flowers, poems and, yes, love notes. Artist Luc Maspero allegedly took this fervour to a new high – and then low – in 1852, diving off
+                a hotel balcony because “For years I have grappled desperately with her smile. I prefer to die.” Who knew art appreciation could be so dark?</p><br>
+            <img src="fact2.jpg" class="yash1" alt="" data-aos="zoom-in" data-aos duration="1000" data-aos-easing="ease-in-sine" data-aos-offset="300">
+        </div><br><br>
+        <div class="fact3">
+            <h3>3. The colour wheel predates the United States</h3><br>
+            <p>Considering the US is one of the oldest modern democracies, this is pretty amazing. Sir Isaac Newton invented the colour wheel in 1706 by refracting white sunlight into its six colours. The realisation that light alone was responsible for
+                colour was radical, and the wheel proved especially useful for artists, who could now easily observe the most effective colour complementation.</p><br>
+            <img src="fact3.png" class="yash2" alt="" data-aos="zoom-in" data-aos duration="1000" data-aos-easing="ease-in-sine" data-aos-offset="300">
+        </div><br><br>
+        <div class="fact4">
+            <h3>4. Artist Willard Wigan once inhaled his own work</h3><br>
+            <p>What’s that, you say? He inhaled a painting?? The man must be enormous! Not quite. Wigan’s works are ‘micro-sculptures’, so tiny they must be viewed through a microscope. In creating his art, Wigan has to slow his heartbeat and work between
+                pulses. The work he inhaled was Alice, from Alice in Wonderland, but apparently she was even better when remade.
+            </p>
+            <br>
+            <img src="fact4.jpg" class="yash3" alt="" data-aos="zoom-in" data-aos duration="1000" data-aos-easing="ease-in-sine" data-aos-offset="300">
+        </div><br><br>
+        <div class="fact5 ">
+            <h3>5. In 2003 street artist Banksy stuck his own work to the wall in the Tate Modern Museum.</h3><br>
+            <p>The prank was soon undone by its inadequate glue, but for a few hours Crimewatch UK Has Ruined the Countryside For All of Us was hung in one of the world’s most famous museums. It also inspired Andrzej Sobiepan, a Polish art student, to a
+                similar feat in 2005, where for three days he successfully passed off his work as part of the National Museum’s collection.
+
+            </p><br>
+            <img src="4535279420_51681d359a_b.jpg " class="yash4 " alt="" data-aos="zoom-in" data-aos duration="1000" data-aos-easing="ease-in-sine" data-aos-offset="300">
+        </div><br><br>
+    </div>
+
+    <div class="container">
+        <h2>SOME OF THE FAMOUS ARTIST ALL TIME</h2>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-3 cbox">
+                <div class="product-top">
+                    <img src="artist1.jpg">
+                    <div class="manshu">
+                        <h3>Andy warhol</h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 cbox">
+                <div class="product-top">
+                    <img src="artist2.jpg">
+                    <div class="manshu">
+                        <h3>Pablo Picasso</h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 cbox">
+                <div class="product-top">
+                    <img src="artist3.jpg">
+                    <div class="manshu">
+                        <h3>Vincent van Gogh</h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 cbox">
+                <div class="product-top">
+                    <img src="ARTIST4.jpg">
+                    <div class="manshu">
+                        <h3>Leonardo da Vinci</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="arrival ">
+
+        <H2>NEW ARRIVAL</H2>
+        <hr>
+        <div class="parent5" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+            <div class="leftdiv5 "><img src="lion2.jpg" alt="artist" style="width:120px;height:150px;"></div>
+
+            <div class="rightdiv5 "><br> Lion Face <br><br>
+                <div class="star ">
+                    <i class="fa fa-star "></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o "></i> <br>
+                    <font color="red ">$170.00</font>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="parent5" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+            <div class="leftdiv5 "><img src="skecth.jpg " alt="artist" style="width:120px;height:150px;"></div>
+
+            <div class="rightdiv5 "><br>LADY <br><br>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o "></i><br>
+                    <font color="red ">$190.00</font>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="parent5" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+            <div class="leftdiv5 "><img src="girl2.jpg " alt="artist " style="width:120px;height:150px; "></div>
+
+            <div class="rightdiv5 "><br>The Girl <br><br>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o "></i><br>
+                    <font color="red ">$240.00</font>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="saleproducts ">
+
+        <h2>SALE PRODUCTS</h2>
+        <hr>
+        <div class="parent5" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+            <div class="leftdiv5 "><img src="deva1.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+            <div class="rightdiv5 "><br>Lord Ganesha <br><br>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o "></i><br>
+                    <font color="red ">$140.00</font>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="parent5" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+            <div class="leftdiv5 "><img src="abtract.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+            <div class="rightdiv5 "><br>Abstract Painting <br><br>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o "></i><br>
+                    <font color="red "> $210.00</font>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="parent5" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+            <div class="leftdiv5 "><img src="tower.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+            <div class="rightdiv5 "><br>Acrylic Painting <br><br>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i><br>
+                    <font color="red "> $210.00</font>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="saleart ">
+        <h2>SALE YOUR ART WITH US</h2>
+        <hr><br>
+
+        <p>If you are an atist who wants to take their passion to the next level by selling their original artwork, then you have landed at the right place.
+        </p>
+        <p>we would love to cllaborate with you as an artist and help you to achieve your dreams. </p>
+
+        <p>If you are interested in collaborating with us, apply through our
+            <a href="online form.html "> online form.</a>
+        </p>
+    </div>
+    <footer>
+        <div class="footer-content ">
+            <form action=" ">
+
+                <h1>Stay Connected</h1>
+
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, architecto? Quos debitis ut vero.
+                </p>
+                <input type="text " name="Username " placeholder="Enter your e-mail ">
+                <button type="submit ">Suscribe </button>
+
+                <ul class="media ">
+                    <li><a href="# "><i class="fa fa-facebook "></i></a>
+                    </li>
+                    <li><a href="# "><i class="fa fa-twitter "></i></a></li>
+                    <li><a href="# "><i class="fa fa-google-plus "></a></i>
+                    </li>
+                    <li><a href="# "><i class="fa fa-youtube "></a></i>
+                    </li>
+                    <li><a href="# "><i class="fa fa-linkedin-square "></a></i>
+                    </li>
+
+                </ul>
+                <ul class="buy ">
+                    <li>Buy our art</li><br>
+                    <li> Sell your art </li><br>
+                    </li>
+                </ul>
+
+                <h1>Contact</h1>
+                <ul class="contact ">
+
+                    <li>
+                        <i class="fa fa-phone "></i> 8708064902
+                    </li><br>
+
+
+                    <li>
+                        <i class="fa fa-envelope-o "></i> tigersaini6162@gmail.com
+                    </li>
+                    <br>
+                    <li>
+                        <i class="fa fa-map-marker "></i> Hisar, HARYANA
+                    </li>
+                    <br>
+                </ul>
+            </form>
+        </div>
+        <div class="footer-bottom ">
+            <p>copyright & copy2021 theartgallery. desined by <span>yash</span></p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

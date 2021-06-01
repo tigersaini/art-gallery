@@ -1,0 +1,420 @@
+<style>
+    <style>.parent {
+        border: 1px #fff;
+        width: 100%;
+        float: left;
+        margin-top: 50px;
+        align-items: center;
+    }
+    
+    .leftdiv {
+        width: 400px;
+        height: 190px;
+        background: #c0c0c0;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: 250px;
+    }
+    
+    .rightdiv {
+        width: 400px;
+        height: 190px;
+        background: #f5f5f5;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .parent1 {
+        border: 1px #fff;
+        width: 100%;
+        float: left;
+        margin-top: 50px;
+        align-items: center;
+    }
+    
+    .leftdiv1 {
+        width: 400px;
+        height: 190px;
+        background: #c0c0c0;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: 250px;
+    }
+    
+    .rightdiv1 {
+        width: 400px;
+        height: 190px;
+        background: #f5f5f5;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .parent2 {
+        border: 1px #fff;
+        width: 100%;
+        float: left;
+        margin-top: 50px;
+    }
+    
+    .leftdiv2 {
+        width: 400px;
+        height: 190px;
+        background: #c0c0c0;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: 250px;
+    }
+    
+    .rightdiv2 {
+        width: 400px;
+        height: 190px;
+        background: #f5f5f5;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .parent3 {
+        border: 1px #fff;
+        width: 100%;
+        float: left;
+        margin-top: 50px;
+    }
+    
+    .leftdiv3 {
+        width: 400px;
+        height: 190px;
+        background: #c0c0c0;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: 250px;
+    }
+    
+    .rightdiv3 {
+        width: 400px;
+        height: 190px;
+        background: #f5f5f5;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .parent5 {
+        border: 1px #fff;
+        width: 100%;
+        float: left;
+        margin-top: 50px;
+    }
+    
+    .leftdiv5 {
+        width: 125px;
+        height: 150px;
+        background: #c0c0c0;
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-left: 250px;
+    }
+    
+    .rightdiv5 {
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.781);
+        float: left;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        float: left;
+        margin-top: 50px;
+        margin-left: 150px;
+        /* Remove this if you don't want the 3D effect */
+    }
+    /* This container is needed to position the front and back side */
+    
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    /* Position the front and back side */
+    
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        /* Safari */
+        backface-visibility: hidden;
+    }
+    /* Style the front side (fallback if image is missing) */
+    
+    .flip-card-front {
+        background-color: #bbb;
+        color: black;
+    }
+    /* Style the back side */
+    
+    .flip-card-back {
+        background-color: rgb(223, 6, 168);
+        color: white;
+        transform: rotateY(180deg);
+    }
+    
+    .flip-card1 {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        float: left;
+        margin-top: 50px;
+        margin-left: 50px;
+        /* Remove this if you don't want the 3D effect */
+    }
+    /* This container is needed to position the front and back side */
+    
+    .flip-card-inner1 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    
+    .flip-card1:hover .flip-card-inner1 {
+        transform: rotateY(180deg);
+    }
+    /* Position the front and back side */
+    
+    .flip-card-front1,
+    .flip-card-back1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        /* Safari */
+        backface-visibility: hidden;
+    }
+    /* Style the front side (fallback if image is missing) */
+    
+    .flip-card-front1 {
+        background-color: #bbb;
+        color: black;
+    }
+    /* Style the back side */
+    
+    .flip-card-back1 {
+        background-color: orangered;
+        color: white;
+        transform: rotateY(180deg);
+    }
+    
+    .flip-card2 {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        float: left;
+        margin-top: 50px;
+        margin-left: 50px;
+        /* Remove this if you don't want the 3D effect */
+    }
+    /* This container is needed to position the front and back side */
+    
+    .flip-card-inner2 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    
+    .flip-card2:hover .flip-card-inner2 {
+        transform: rotateY(180deg);
+    }
+    /* Position the front and back side */
+    
+    .flip-card-front2,
+    .flip-card-back2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        /* Safari */
+        backface-visibility: hidden;
+    }
+    /* Style the front side (fallback if image is missing) */
+    
+    .flip-card-front2 {
+        background-color: #bbb;
+        color: black;
+    }
+    /* Style the back side */
+    
+    .flip-card-back2 {
+        background-color: dodgerblue;
+        color: white;
+        transform: rotateY(180deg);
+    }
+    
+    .onlineform input {
+        background: rgba(209, 208, 208, 0.698);
+        border: none;
+        border-radius: 2px;
+        width: 400px;
+    }
+    
+    .onlineform button {
+        background: blue;
+        color: #fff;
+        border: mone;
+        border-radius: 5px;
+        width: 400px;
+    }
+    
+    * {
+        margin: 0;
+        padding: o;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background: #fcfcfc
+    }
+    
+    footer {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.945);
+        margin-top: 1500px;
+        height: auto;
+        width: 100;
+        font-family: "open sans";
+        padding-top: 40px;
+        color: #fff;
+    }
+    
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+    
+    .footer-content h3 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 3rem;
+    }
+    
+    .footer-content button {
+        background: white;
+        color: black;
+        border: none;
+        height: 22px;
+        width: 60px;
+    }
+    
+    .footer-content p {
+        max-width: 500px;
+        margin: 10px auto;
+        line-height: 28px;
+        font-size: 14px;
+    }
+    
+    .media {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0 3rem 0;
+    }
+    
+    .media li {
+        margin: 0 10px;
+    }
+    
+    .media a {
+        text-decoration: none;
+        color: #FFF;
+    }
+    
+    .media a i {
+        font-size: 1.8rem;
+        transition: color .4s ease;
+    }
+    
+    .media a:hover i {
+        color: aqua;
+    }
+    
+    .footer-bottom {
+        background: rgb(0, 0, 0);
+        width: 100vw;
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+    .footer-bottom p {
+        font-size: 14px;
+        word-spacing: 2px;
+        text-transform: capitalize;
+        opacity: .4;
+        font-weight: 200;
+        color: azure;
+    }
+    
+    .button {
+        background: rgba(0, 0, 0, 0.144);
+        font-family: "sans-serif";
+        border-radius: 3px;
+        border: none;
+        width: 90px;
+        height: 30px;
+    }
+    
+    .contact {
+        color: white;
+    }
+</style>
+</style>
+
+</style>

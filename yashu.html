@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        background-image: url(ravi.jpg);
+        background-repeat: no-repeat;
+        height: 580px;
+        background-size: cover;
+        background-position: center;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    
+    .menubar {
+        background: rgb(255, 0, 0);
+    }
+    
+    .menubar ul {
+        display: inline-flex;
+        list-style: none;
+        color: #fff;
+        float: right;
+    }
+    
+    .menubar ul li {
+        margin: 15px;
+        padding: 15px;
+    }
+    
+    .menubar ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    .active,
+    .menubar ul li:hover {
+        background: rgba(0, 0, 0, 0.452);
+        border-radius: 3px;
+    }
+    
+    .submenu-1 {
+        display: none;
+    }
+    
+    .menubar ul li:hover .submenu-1 {
+        display: block;
+        position: absolute;
+        background: red;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    
+    .menubar ul li:hover .submenu-1 ul {
+        display: block;
+        margin: 10px;
+    }
+    
+    .menubar ul li:hover .submenu-1 ul li {
+        width: 150px;
+        padding: 10px;
+        border-bottom: 1px dotted #fff;
+        background: transparent;
+        border-radius: 0;
+        text-align: left;
+    }
+    
+    .menubar ul li:hover .submenu-1 ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .login-box {
+        width: 320px;
+        height: 350px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 70px 30px;
+        float: right;
+        position: absolute;
+        margin-top: 82px;
+        margin-left: 200px;
+    }
+    
+    .fa fa-user-circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        position: absolute;
+        top: -50px;
+        left: calc(50% -50px);
+    }
+    
+    h1 {
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 22px;
+    }
+    
+    .login-box p {
+        margin: 0px;
+        padding: 0;
+        font-weight: bold;
+    }
+    
+    .login-box input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .login-box input[type="text"],
+    input[type="password"] {
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        font-size: 16px;
+    }
+    
+    .login-box button {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: red;
+        color: whitesmoke;
+        font-size: 18px;
+        border-radius: 20px;
+        width: 100px;
+    }
+    
+    .login-box button:hover {
+        cursor: pointer;
+        background: #fff;
+        color: red;
+    }
+    
+    .login-box a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #fff;
+        margin-left: 20px;
+    }
+    
+    .login-box a:hover {
+        color: red;
+    }
+    
+    .social {
+        position: absolute;
+        bottom: 4% right: ;
+    }
+    
+    .social i {
+        font-size: 25px;
+        margin: 10px;
+    }
+    
+    .social i:hover {
+        color: red;
+        cursor: pointer;
+    }
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    
+    .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        float: left;
+        ;
+        /* Remove this if you don't want the 3D effect */
+    }
+    /* This container is needed to position the front and back side */
+    
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    /* Position the front and back side */
+    
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        /* Safari */
+        backface-visibility: hidden;
+    }
+    /* Style the front side (fallback if image is missing) */
+    
+    .flip-card-front {
+        background-color: #bbb;
+        color: black;
+    }
+    /* Style the back side */
+    
+    .flip-card-back {
+        background-color: dodgerblue;
+        color: white;
+        transform: rotateY(180deg);
+    }
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    
+    .flip-card1 {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        float: left;
+        /* Remove this if you don't want the 3D effect */
+    }
+    /* This container is needed to position the front and back side */
+    
+    .flip-card-inner1 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    
+    .flip-card1:hover .flip-card-inner1 {
+        transform: rotateY(180deg);
+    }
+    /* Position the front and back side */
+    
+    .flip-card-front1,
+    .flip-card-back1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        /* Safari */
+        backface-visibility: hidden;
+    }
+    /* Style the front side (fallback if image is missing) */
+    
+    .flip-card-front1 {
+        background-color: #bbb;
+        color: black;
+    }
+    /* Style the back side */
+    
+    .flip-card-back1 {
+        background-color: dodgerblue;
+        color: white;
+        transform: rotateY(180deg);
+    }
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+    
+    .flip-card2 {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        border: 1px solid #f1f1f1;
+        perspective: 1000px;
+        float: left;
+        /* Remove this if you don't want the 3D effect */
+    }
+    /* This container is needed to position the front and back side */
+    
+    .flip-card-inner2 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    
+    .flip-card2:hover .flip-card-inner2 {
+        transform: rotateY(180deg);
+    }
+    /* Position the front and back side */
+    
+    .flip-card-front2,
+    .flip-card-back2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        /* Safari */
+        backface-visibility: hidden;
+    }
+    /* Style the front side (fallback if image is missing) */
+    
+    .flip-card-front2 {
+        background-color: #bbb;
+        color: black;
+    }
+    /* Style the back side */
+    
+    .flip-card-back2 {
+        background-color: dodgerblue;
+        color: white;
+        transform: rotateY(180deg);
+    }
+</style>
+
+<html>
+
+<body>
+
+    <div class="menubar">
+
+        <ul>
+            <li class="active"><a href="#"><i class="fa fa-home"></i>HOME</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>About us</a>
+                <div class="submenu-1">
+                    <ul>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="#">Vision</a></li>
+                        <li><a href="#">Team</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#"><i class="fa fa-clone"></i>sevices</a>
+                <div class="submenu-1">
+                    <ul>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="#">Vision</a></li>
+                        <li><a href="#">Team</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#"><i class="fa fa-phone"></i>contact us</a></li>
+        </ul>
+    </div>
+
+
+
+    <div class="login-box">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        <h1>Login Here</h1>
+        <form action="">
+            <p>Username</p>
+            <input type="text" name="Username" placeholder="Enter username">
+            <p>Password</p>
+            <input type="password" name="pasword" placeholder="Enter password">
+            <button type="submit">Login</button>
+            <a href="#">Forgot Password</a>
+        </form>
+        <div class="social">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+
+            <i class="fa fa-pinterest-square" aria-hidden="true"></i>
+
+            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+
+        </div>
+    </div>
+
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <img src="flip1.jpg" alt="Avatar" style="width:300px;height:200px;">
+            </div>
+            <div class="flip-card-back">
+                <h1>LIFETIME MEMBERSHIP</h1>
+
+                <p5>Are you a creative individual looking to share your creative works with the world online,without spending time time in front of computer & without paying selling commissions?then join 380 artists member who enjoy such benifits and more
+                </p5>
+                <p>Read about our services here</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="parent5" data-aos="fade-up " data-aos-easing="ease-in-sine " data-aos-offset="300 " data-aos-duration="1000 ">
+
+        <div class="leftdiv5 "><img src="deva1.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+        <div class="rightdiv5 "><br>Lord Ganesha <br><br>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+        </div>
+
+    </div>
+
+    <div class="parent5 " data-aos="fade-up" data-aos-easing="ease-in-sine " data-aos-offset="300 " data-aos-duration="1000 ">
+
+        <div class="leftdiv5 "><img src="abtract.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+        <div class="rightdiv5 "><br>Abstract Painting <br><br>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+        </div>
+
+    </div>
+
+    <div class="parent5 " data-aos="fade-up " data-aos-easing="ease-in-sine " data-aos-offset="300 " data-aos-duration="1000 ">
+
+        <div class="leftdiv5 "><img src="tower.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+        <div class="rightdiv5 "><br>Acrylic Painting <br><br>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+            <i class="fa fa-star "></i>
+        </div>
+
+    </div>
+
+
+
+    <h1>SOME OF THE MOST FAMOUS ARTIST OF ALL TIME</h1>
+    <hr>
+
+
+    <div class="parent" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+        <div class="leftdiv"><img src="artist1.jpg" alt="artist" style="width:400px;height:190px;"></div>
+
+        <div class="rightdiv">
+            <h1>Andy Warhol</h1>
+            <H6>Beginning out as a commercial artist, he brought the ethos of promotion into fine art, even going so far as to say, “Making money is art.” Such attitudes blew away the existential declarations of Abstract Expressionism. Although he’s recognized
+                for captions such as Campbell’s Soup, Marilyn Monroe, and Elvis Presley, his greatest invention was himself.
+            </H6><br>
+            <input type="button" class="button" value="Read More">
+
+        </div>
+
+    </div>
+
+    <div class="parent1" data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+        <div class="leftdiv1"><img src="artist2.jpg" alt="artist" style="width:400px;height:190px;"></div>
+
+        <div class="rightdiv1">
+            <H1>Pablo Picasso</H1>
+            <H6>Pablo Picasso is implicitly synonymous with modern art, and it doesn’t hurt that he fits the generally held image of the fugitive genius whose goals are balanced by a taste for living big. He turned the field of art history with radical innovations
+                that include college and Cubism, which destroyed the stranger.
+            </H6><br>
+            <input type="button" class="button" value="Read More">
+        </div>
+
+    </div>
+
+
+    <div class="parent2" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+        <div class="leftdiv2 "><img src="ARTIST4.jpg" alt="artist" style="width:400px;height:190px;"></div>
+
+        <div class="rightdiv2 ">
+            <H1>Leonardo da Vinci</H1>
+            <H6>The original Renaissance Man, Leonardo is known as a genius, not only for masterpieces such as the Mona Lisa, The Last Supper and The Lady with an Ermine but also for his designs of technologies (aircraft, tanks, automobile) that were five
+                hundred years in the future.</H6><br>
+            <input type="button" class="button" value="Read More">
+        </div>
+
+    </div>
+
+    <div class="parent3" data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+        <div class="leftdiv3"><img src="artist3.jpg" alt="artist" style="width:400px;height:190px;"></div>
+
+        <div class="rightdiv3">
+            <H1>Vincent van Gogh</H1>
+            <H6>Van Gogh is known for being psychologically unstable, but his arts are among the most popular and most famous artists of all time. Van Gogh’s technique of painting with flurries of thick brushstrokes made up of vivid colours squeezed straight
+                from the tube would inspire subsequent generations of artists.</H6><br>
+            <input type="button" class="button" value="Read More">
+        </div>
+    </div>
+
+</body>
+<div class="sale-products">
+    <div class="parent5 " data-aos="fade-up" data-aos-easing="ease-in-sine " data-aos-offset="300 " data-aos-duration="800 ">
+
+        <div class="leftdiv5 "><img src="deva1.jpg" alt="artist " style="width:130px;height:150px; "></div>
+
+        <div class="rightdiv5 "><br>Lord Ganesha <br><br>
+            <i class="fa fa-star-o "></i>
+            <i class="fa fa-star-o "></i>
+            <i class="fa fa-star-o "></i>
+            <i class="fa fa-star-o "></i>
+            <i class="fa fa-star-o "></i><br> $140.00
+        </div>
+
+    </div>
+
+    <div class="parent5 " data-aos="fade-up" data-aos-easing="ease-in-sine " data-aos-offset="300 " data-aos-duration="800 ">
+
+        <div class="leftdiv5 "><img src="abtract.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+        <div class="rightdiv5 "><br>Abstract Painting <br><br>
+            <i class="fa fa-star-o "></i>
+            <i class="fa fa-star-o "></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o "></i>
+            <i class="fa fa-star-o "></i><br> $210.00
+        </div>
+
+    </div>
+    <div class="parent5 " data-aos="fade-up" data-aos-easing="ease-in-sine " data-aos-offset="300 " data-aos-duration="1000 ">
+
+        <div class="leftdiv5 "><img src="tower.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+        <div class="rightdiv5 "><br>Acrylic Painting <br><br>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i><br> $160.00
+        </div>
+
+    </div>
+</div>
+
+sehg9choihercnaoui
+
+
+<div class="new-arrival">
+
+
+    <div class="parent5" data-aos="fade-right" data-aos-easi data-aos-offset="300" data-aos-duration="1000">
+
+        <div class="leftdiv5 "><img src="lion2.jpg" alt="artist" style="width:120px;height:150px;"></div>
+
+        <div class="rightdiv5 "><br> Lion Face <br><br>
+            <div class="staR">
+                <i class="fa fa-star-o fa-1px"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i> <br> $170.00
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="parent5" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+        <div class="leftdiv5 "><img src="skecth.jpg" alt="artist" style="width:120px;height:150px;"></div>
+
+        <div class="rightdiv5 "><br>The LADY <br><br>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i><br> $190.00
+        </div>
+
+    </div>
+
+    <div class="parent5" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+        <div class="leftdiv5 "><img src="girl2.jpg" alt="artist" style="width:120px;height:150px;"></div>
+
+        <div class="rightdiv5 "><br>The Girl <br><br>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i><br> $240.00
+        </div>
+
+    </div>
+
+</div>
+
+<a href="" class="onlineform">
+    <input type="text " name=" " placeholder="Full Name "><br><br>
+    <input type="text " name=" " placeholder="Last Name ">
+    <BR></BR>
+    <input type="text " name=" " placeholder="Email ">
+    <BR></BR>
+    <input type="text " name=" " placeholder="Country and city of residence ">
+    <BR></BR>
+    <input type="text " name=" " placeholder="Phone number ">
+    <BR></BR>
+    <input type="text " name=" " placeholder="Describe your art style ">
+    <BR></BR>
+    <input type="text " name=" " placeholder="what materials do you use? ">
+    <BR></BR>
+    <input type="text " name=" " placeholder="Size of your artwork">
+    <BR></BR>
+    attach 2 images of your art <br><br>
+    <input type="text " name=" " placeholder="Approximate cost of each painting you wish to sell? ">
+    <BR></BR>
+    <button type="submit ">send</button>
+
+</a>
+
+<footer>
+    <div class="footer-content ">
+        <form action=" ">
+            <h3>Stay Connected</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, architecto? Quos debitis ut vero.
+            </p>
+            <input type="text " name="Username " placeholder="Enter your e-mail ">
+            <button type="submit ">Suscribe </button>
+
+            <ul class="media ">
+                <li><a href="# "><i class="fa fa-facebook "></i></a>
+                </li>
+                <li><a href="# "><i class="fa fa-twitter "></i></a></li>
+                <li><a href="# "><i class="fa fa-google-plus "></a></i>
+                </li>
+                <li><a href="# "><i class="fa fa-youtube "></a></i>
+                </li>
+                <li><a href="# "><i class="fa fa-linkedin-square "></a></i>
+                </li>
+
+            </ul>
+            <ul class="buy">
+                <li>Buy our art</li> <br>
+                <li> Sell your art </li><br>
+                </li>
+            </ul>
+            <br>
+            <h1>Contact</h1>
+            <ul class="contact ">
+
+                <li>
+                    <i class="fa fa-phone "></i> 8708064902
+                </li><br>
+
+
+                <li>
+                    <i class="fa fa-envelope-o "></i> tigersaini6162@gmail.com
+                </li>
+                <br>
+                <li>
+                    <i class="fa fa-map-marker "></i> Hisar, HARYANA
+                </li>
+                <br>
+            </ul>
+        </form>
+    </div>
+    <div class="footer-bottom ">
+        <p>copyright & copy2021 theartgallery. desined by <span>yash</span></p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js "></script>
+<script>
+    AOS.init();
+</script>
+</body>
+
+</html>
+
+</html>
+<div class="parent5" data-aos="fade-right" data-aos-easi data-aos-offset="300" data-aos-duration="1000">
+
+    <div class="leftdiv5 "><img src="lion2.jpg" alt="artist" style="width:120px;height:150px;"></div>
+
+    <div class="rightdiv5 "><br> Lion Face <br><br>
+        <div class="staR">
+            <i class="fa fa-star-o fa-1px"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i> <br> $170.00
+
+
+
+        </div>
+    </div>
+
+</div>
+
+
+<div class="parent5" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+    <div class="leftdiv5 "><img src="skecth.jpg" alt="artist" style="width:120px;height:150px;"></div>
+
+    <div class="rightdiv5 "><br>The LADY <br><br>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i><br> $190.00
+    </div>
+
+</div>
+
+<div class="parent5" data-aos="fade-right" data-aos-easing="ease-in-sine" data-aos-offset="300" data-aos-duration="1000">
+
+    <div class="leftdiv5 "><img src="girl2.jpg" alt="artist" style="width:120px;height:150px;"></div>
+
+    <div class="rightdiv5 "><br>The Girl <br><br>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i>
+        <i class="fa fa-star-o"></i><br> $240.00
+    </div>
+
+</div>
+
+</div>
+
+<div class="sale-products"></div>
+<div class="parent5" data-aos="fade-up " data-aos-easing="ease-in-sine " data-aos-offset="300 " data-aos-duration="1000 ">
+
+    <div class="leftdiv5 "><img src="deva1.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+    <div class="rightdiv5 "><br>Lord Ganesha <br><br>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+    </div>
+
+</div>
+
+<div class="parent5 " data-aos="fade-up" data-aos-easing="ease-in-sine " data-aos-offset="300 " data-aos-duration="1000 ">
+
+    <div class="leftdiv5 "><img src="abtract.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+    <div class="rightdiv5 "><br>Abstract Painting <br><br>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+    </div>
+
+</div>
+
+<div class="parent5 " data-aos="fade-up " data-aos-easing="ease-in-sine " data-aos-offset="300 " data-aos-duration="1000 ">
+
+    <div class="leftdiv5 "><img src="tower.jpg " alt="artist " style="width:130px;height:150px; "></div>
+
+    <div class="rightdiv5 "><br>Acrylic Painting <br><br>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+        <i class="fa fa-star "></i>
+    </div>
+</div>
