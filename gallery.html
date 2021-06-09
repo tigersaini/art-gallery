@@ -77,7 +77,7 @@
         display: none;
     }
     
-    @media(max-width:360px) {
+    @media(max-width:450px) {
         .checkbtn {
             display: block;
         }
@@ -104,18 +104,22 @@
         }
     }
     
-    .search input {
-        width: 1078px;
-        height: 35px;
+     form.example {
+        margin-top: 5px;
+        width: 100%;
+    }
+    
+    .example input {
+        width: 80%;
+        height: 20px;
         background: rgb(196, 195, 195);
         border-radius: 3px;
         border: none;
-        margin-top: 4px;
     }
     
-    .search button {
-        height: 34px;
-        width: 226px;
+    .example button {
+        width: 10%;
+        height: 20px;
         background: black;
         color: white;
         border-radius: 3px;
@@ -351,7 +355,7 @@
         color: white;
     }
     
-    @media(max-width:360px) {
+    @media(max-width:450px) {
         .menubar {
             background: black;
             height: 50px;
@@ -365,15 +369,20 @@
             font-weight: bold;
             margin-right: 10px;
         }
-        .search input {
-            width: 250px;
+         form.example {
+            background: lightcoral;
+            width: 100%;
+            margin-top: 5px;
+        }
+        .example input {
+            width: 60%;
             height: 20px;
             background: rgb(196, 195, 195);
             border-radius: 3px;
             border: none;
         }
-        .search button {
-            width: 40px;
+        .example button {
+            width: 20%;
             height: 20px;
             background: black;
             color: white;
@@ -455,12 +464,12 @@
         </ul>
     </div>
 
-    <div class="search">
-        <form action="">
+    
+        <form class="example" action="">
             <input type="text" placeholder="Search Item...">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-    </div>
+   
 
 
     <div class="slider">
